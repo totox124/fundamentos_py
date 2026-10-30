@@ -3,7 +3,7 @@
 inventario = {}
 while True: 
     try:
-        opc = int(input("desea agregar un producto(1) o salir (2)? "))
+        opc = int(input("desea agregar un producto(1), salir (2) o ver el inventario(3)? "))
         if opc == 1:
             producto = input("nombre del producto: ")
             try:
@@ -13,15 +13,13 @@ while True:
                     continue
             inventario[producto] = precio
             print(inventario)
-            try:
-                opc = int(input("desea agregar un producto(1), salir(2) o ver el inventario(3)? "))
-            except ValueError:
-                    print("caracter invalido, porfavor, solo numeros enteros")
-                    continue
+            
         if opc == 3:
-                   
-                for producto, precio in inventario.items():
-                    print(f"{producto} : {precio}")
+                if not inventario:
+                     print("inventario vacio")   
+                else:
+                    for producto, precio in inventario.items():
+                        print(f"{producto} : {precio}")
                     
         elif opc == 2:
             break
