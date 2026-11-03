@@ -11,16 +11,16 @@ while True:
         continue
     if opc == 1:
         contador = 0
-        while contador <= 3:
+        while contador < 3:
             with open("elementos.txt", "a", encoding="utf-8") as archivo:
-                texto = input("agregue un elemento")
+                texto = input("agregue un elemento: ")
                 archivo.write(texto + "\n")
                 contador += 1
         continue
     elif opc == 2:
         
                 with open("elementos.txt", "w", encoding="utf-8") as archivo:
-                    texto = input("agregue un elemento")
+                    texto = input("agregue un elemento: ")
                     archivo.write(texto + "\n")
                     
 
@@ -34,4 +34,4 @@ while True:
 
     else:
         print("opcion invalida, intente nuevamente")
-        continue
+        
